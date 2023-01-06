@@ -1,0 +1,320 @@
+@media (max-width:768px) {
+
+    .main .wrap {
+        left: 50%;
+    }
+
+    .main .image {
+        opacity: 0;
+    }
+    /* .main .logo {
+        background-size: 70%;
+    }
+
+    .main .email {
+        width: 200px;
+    }
+
+    .main .email label {
+        font-Size: 1rem;
+    }
+
+
+    .main .password {
+        width: 200px;
+    }
+
+    .main .password label {
+        font-Size: 1rem;
+    }
+
+
+    .main .login {
+        width: 200px;
+        height: 30px;
+    }
+
+    .main .login button {
+        font-size: 1rem;
+    }
+
+    .main .other {
+        width: 200px;
+        height: 30px;
+        top: 520px;
+    }
+
+    .main .other span {
+        padding: 0px 10px;
+    }
+
+    .main .social {
+        width: 200px;
+        height: 30px;
+        top: 580px;
+    }
+
+    .main .social span:nth-child(1) {
+        margin: 0 15px;
+        background-size: 100%;
+    }
+
+    .main .social span:nth-child(2) {
+        margin: 0 15px;
+        background-size: 100%;
+    }
+
+    .main .social span:nth-child(3) {
+        margin: 0 15px;
+        background-size: 100%;
+    }
+
+    .main .find {
+        width: 250px;
+        height: 10px;
+        top: 660px;
+    }
+
+    .main .find button {
+        color: #b9b9b9;
+        border-color: #b9b9b9;
+        padding: 0 10px;
+        transition: color 1s;
+        font-size: 0.7rem;
+    } */
+}
+
+
+
+
+
+
+.main {
+    font-size: 10px;
+    overflow-y: hidden;
+
+    color: #000;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 768px;
+    max-width: 1920px;
+    height: 100vh;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+.wrap {
+    position: absolute;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    top: 7%;
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #FFFFFF;
+}
+
+.image {
+    position: absolute;
+    width: 50%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: url(../public/image.png) center center;
+}
+
+.logo {
+    position: absolute;
+    width: 400px;
+    height: 72px;
+    left: 75%;
+    transform: translateX(-50%);
+    top: 80px;
+    background: url(../public/logo.png) center center no-repeat;
+    background-size: 100%;
+}
+
+.email {
+    position: absolute;
+    width: 300px;
+    height: 0px;
+    left: 75%;
+    transform: translateX(-50%);
+    top: 240px;
+    padding-top: 12px;
+    color: #b9b9b9;
+}
+
+
+.email label {
+    color: #b9b9b9;
+    font-Size: 1.2rem;
+}
+
+/* .email label:focus {
+    color: #3571FF;
+} */
+
+
+.email div::before {
+    border-bottom: 1px solid #b9b9b9;
+}
+
+.email div::after {
+    border-bottom: 2px solid #3571FF;
+}
+
+
+.password {
+    position: absolute;
+    width: 300px;
+    height: 0px;
+    left: 75%;
+    transform: translateX(-50%);
+    top: 340px;
+    padding-top: 12px;
+
+    color: #b9b9b9;
+}
+
+.password label {
+    color: #b9b9b9;
+    font-Size: 1.2rem;
+}
+
+.password div::before {
+    border-bottom: 1px solid #b9b9b9;
+}
+
+.password div::after {
+    border-bottom: 2px solid #3571FF;
+}
+
+
+.login {
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    left: 75%;
+    transform: translateX(-50%);
+    top: 450px;
+    background-color: #fff;
+    border-radius: 50px;
+    border: 1px solid #3571FF;
+    color: #3571FF;
+    transition: color 1s, background 1s;
+    box-shadow: none;
+    font-weight: 600;
+}
+
+.login:hover {
+    background-color: #3571FF;
+    color: #fff;
+    box-shadow: none;
+}
+
+.other {
+    position: absolute;
+    width: 300px;
+    height: 30px;
+    left: 75%;
+    transform: translateX(-50%);
+    top: 540px;
+    text-align: center;
+}
+
+.other span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0px 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #b9b9b9;
+    background-color: #FFFFFF;
+}
+
+.other::before {
+    content: "";
+    display: inline-block;
+    margin: 15px 0 0px;
+    width: 100%;
+    border-bottom: 1px solid #b9b9b9;
+}
+
+.social {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 75%;
+    transform: translateX(-50%);
+    top: 608px;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 0;
+}
+
+.social span:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    margin: 0 20px;
+    background: url(../public/google.png) center center no-repeat;
+    cursor: pointer;
+}
+
+.social span:nth-child(2) {
+    width: 40px;
+    height: 40px;
+    margin: 0 20px;
+    background: url(../public/facebook.png) center center no-repeat;
+    cursor: pointer;
+}
+
+.social span:nth-child(3) {
+    width: 40px;
+    height: 40px;
+    margin: 0 20px;
+    background: url(../public/naver.png) center center no-repeat;
+    cursor: pointer;
+}
+
+.find {
+    position: absolute;
+    width: 300px;
+    height: 10px;
+    left: 75%;
+    transform: translateX(-50%);
+    top: 700px;
+    justify-content: center;
+}
+
+.find button {
+    color: #b9b9b9;
+    border-color: #b9b9b9;
+    padding: 0 10px;
+    transition: color 1s;
+    font-size: 0.8rem;
+}
+
+.find button:hover {
+    color: #3571FF;
+    background-color: rgba(255, 255, 255, 0);
+    font-weight: 600;
+}
+
+.find span {
+    opacity: 0;
+}

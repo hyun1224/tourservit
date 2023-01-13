@@ -1,11 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '../styles/index.module.css'
+import styles from '../styles/membership.module.css'
 import TextField from '@mui/material/TextField';
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 import { useRouter } from 'next/router';
 import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
@@ -18,10 +17,7 @@ export default function Home() {
     const router = useRouter();
 
     const link = () => {
-        router.push("/membership")
-    }
-    const link1 = () => {
-        router.push("/main")
+        router.push("/")
     }
     const [showPassword, setShowPassword] = React.useState(false);
 
@@ -53,14 +49,13 @@ export default function Home() {
                         defaultValue=""
                         size="small"
                         variant="standard"
-                        sx={{
-                            "&.Mui-focused": {
-                                color: "#b9b9b9"
-                            }
+                        // sx={{
+                        //     "&.Mui-focused": {
+                        //         color: "#b9b9b9"
+                        //     }
 
-                        }}
+                        // }}
                     />
-
 
                     <div className={styles.icon}>
                         <TextField className={styles.password}
@@ -81,35 +76,30 @@ export default function Home() {
                         </IconButton>
                     </div>
 
-                    <Button className={styles.login} variant="contained" onClick={link1}>로그인</Button>
+                    <div className={styles.icon1}>
+                        <TextField className={styles.confirmpassword}
+                            label="비밀번호 확인"
+                            id="standard-size-small"
+                            defaultValue=""
+                            size="small"
+                            variant="standard"
+                            type={showPassword ? 'text' : 'password'}
+
+                        />
+                        <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                        >
+                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                    </div>
+                    <Button className={styles.membership} variant="contained">가입하기</Button>
 
                     <div className={styles.other}>
-                        <span>또는</span>
+                            <span>이미 회원이신가요?</span>
+                            <span onClick={link}>로그인 하기</span>
                     </div>
-
-                    <div className={styles.social}>
-                        <span>google</span>
-                        <span>facebook</span>
-                        <span>naver</span>
-                    </div>
-
-                    <ButtonGroup className={styles.find} variant="text" aria-label="text button group"
-                    >
-                        <Button sx={{
-                            "&.MuiButtonGroup-grouped:not(:last-of-type)": {
-                                borderColor: "#b9b9b9"
-                            }
-
-                        }}>아이디 찾기</Button>
-                        <Button sx={{
-                            "&.MuiButtonGroup-grouped:not(:last-of-type)": {
-                                borderColor: "#b9b9b9"
-                            }
-
-                        }}>비밀번호 찾기</Button>
-                        {/* <a href="http://localhost:3000/index2" target="_blank" rel="noopener noreferrer"></a> */}
-                        <Button onClick={link}>회원가입</Button>
-                    </ButtonGroup>
 
                 </div>
             </main>

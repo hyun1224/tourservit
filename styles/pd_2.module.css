@@ -1,12 +1,14 @@
 @media (max-width:768px) {}
 
+/* main */
+
 .main {
-    font-size: 10px;
-    overflow-y: hidden;
+    font-size: 1rem;
     color: #252733;
     text-decoration: none;
-    height: 100vh;
     font-family: 'Inter', 'sans-serif';
+    overflow: hidden;
+    height: auto;
 }
 
 .background {
@@ -16,8 +18,10 @@
     background: #FFFFFF;
 }
 
+/* head */
+
 .head {
-    position: absolute;
+    position: fixed;
     width: 100%;
     top: 0;
     height: 6%;
@@ -25,8 +29,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 100px 0 20px;
+    padding: 0 70px 0 20px;
     z-index: 999;
+    background-color: #fff;
+
 }
 
 .logo {
@@ -87,7 +93,7 @@
     border-radius: 50px;
     border: 1px solid #3571FF;
     color: #3571FF;
-    transition: color 1s, background 1s;
+    transition: all 0.5s ease-in 0s;
     box-shadow: none;
     font-weight: 600;
 }
@@ -114,14 +120,36 @@
     background-color: #3571FF;
 }
 
-.menubar {
+
+/* body */
+
+.body {
     position: absolute;
+    left: 0;
+    top: 6%;
+    display: flex;
+    width: 100%;
+    height: auto;
+    background: #FFFFFF;
+}
+
+/* nav */
+
+.nav {
+    display: flex;
+    height: 100vh;
+    position: fixed;
+    width: 13.5%;
+}
+
+
+/* menu */
+
+.menubar {
     display: flex;
     flex-direction: column;
     width: 60px;
-    height: 94%;
-    left: 0px;
-    bottom: 0;
+    height: 100vh;
     background: #3571FF;
     justify-content: flex-start;
     align-items: center;
@@ -131,7 +159,7 @@
 .menubar svg {
     opacity: 1;
     cursor: pointer;
-    transition: opacity 0.5s;
+    transition: all 0.5s ease-in 0s;
 }
 
 .menubar:hover svg:not(:hover) {
@@ -146,21 +174,23 @@
 }
 
 .menu2 {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
     width: 190px;
-    height: 94%;
-    left: 60px;
-    bottom: 0;
+    height: 100vh;
     padding-top: 10px;
     color: #252733;
     border-right: 0.5px solid #DADADA;
+    background-color: #fff;
+
 }
+
 
 .menu2 .menu3 {
     color: #252733;
     height: 40px;
     margin: 5px 0;
-    transition: background 0.5s, opacity 0.5s;
+    transition: all 0.5s ease-in 0s;
 }
 
 .menu2:hover .menu3:not(:hover) {
@@ -171,7 +201,7 @@
     color: #252733;
     width: 22px;
     height: 22px;
-    transition: color 1s;
+    transition: all 0.5s ease-in 0s;
 }
 
 .menu2 .menu3 div {
@@ -181,6 +211,7 @@
 .menu2 .menu3 span {
     font-family: 'Inter', sans-serif;
     transition: color 1s;
+    font-weight: bold;
 }
 
 .menu2 .menu3:hover {
@@ -214,7 +245,8 @@
 
 .menu5 span {
     font-size: 0.8rem;
-    transition: color 0.5s;
+    transition: all 0.5s ease-in 0s;
+    font-weight: bold;
 }
 
 .menu4 {
@@ -225,6 +257,252 @@
 .menu5:hover span {
     color: #3571FF;
     background-color: transparent;
+}
+
+
+/* content */
+.content {
+    width: 87%;
+    padding: 40px 40px 30px;
+    position: absolute;
+    left: 250px;
+    top: 0;
+    background-color: #fff;
+}
+
+
+/* listhead */
+
+.body h3 {
+    font-size: 2rem;
+}
+
+.body .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 50px;
+
+}
+
+.body .title span form {
+    width: 245px;
+    height: 40px;
+}
+
+
+/* .addtitle */
+.addtitle {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around
+}
+
+.addtitle .phone {
+    box-sizing: border-box;
+    width: 290px;
+    height: 610px;
+    border: 5px solid #DADADA;
+    border-radius: 50px;
+}
+
+/* right */
+
+.right {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* list */
+
+.listform {
+    width: 1070px;
+}
+
+.listform .list {
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 2px solid #DADADA;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: none;
+
+}
+
+.listform .list::before {
+    height: 0;
+}
+
+.listform .list:first-child {
+    margin-bottom: 25px;
+}
+
+.listform .list {
+    min-height: 60px;
+}
+
+.listform .list div {
+    align-items: center;
+
+}
+
+.listform .list div:not(:hover) .number {
+    background-color: #252733;
+}
+
+.listform .list div:not(:hover) .contentform {
+    border: 2px solid #DADADA;
+}
+
+.listform .list div > svg {
+    color: #252733;
+}
+
+.contentform {
+    width: 800px;
+    height: 45px;
+    box-shadow: none;
+    border: 2px solid #3571FF;
+    border-radius: 10px;
+    transition: all 0.5s ease-in 0s;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+}
+
+.listform .list div:nth-child(4) .contentform {
+    width: 400px;
+}
+
+
+.contentform input {
+    font-size: 0.8rem;
+    margin: 4px 0 0 10px;
+    font-family: 'Inter', sans-serif;
+}
+
+
+.listform .list .number {
+    background-color: #3571FF;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    padding-top: 4px;
+    margin: 0 20px 0 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.5s ease-in 0s;
+}
+
+.listform .list .text:first-child {
+    margin-right: 50px;
+}
+
+
+.listform .list .formbtn button {
+    background-color: #3571FF;
+    border-radius: 10px;
+    width: 135px;
+    height: 40px;
+    position: absolute;
+    right: 5%;
+    transform: translateY(-50%);
+    top: 50%;
+    box-shadow: none;
+}
+
+.listform .list .formbtn button svg {
+    color: #fff;
+    margin-right: 10px;
+}
+
+.listform .list .formbtn button span {
+    padding-top: 2px;
+}
+
+.bottom {
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.bottom .btn button {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 130px;
+    height: 50px;
+    box-shadow: none;
+    color: #252733;
+    border: 2px solid #DADADA;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding-top: 9px;
+    transition: all 0.5s ease-in 0s;
+}
+
+.bottom .btn button:hover {
+    background-color: #3571FF;
+    color: #fff;
+    border: none;
+}
+
+.bottom .btn:first-child {
+    margin-right: 50px;
+}
+
+
+.link {
+    display: flex;
+
+}
+
+.checkbox {
+    margin-left: 65px;
+}
+
+.checkbox div {
+    flex-direction: row;
+    justify-content: flex-start;
+
+}
+
+.checkbox div label {
+    width: 180px;
+    margin-bottom: 5px;
+}
+
+
+
+.checkbox label svg {
+    
+    margin-right: 10px;
+}
+
+
+
+.pdlink {
+    position: relative;
+}
+
+
+
+
+
+
+/* memo */
+
+.memobtn {
+    position: fixed;
+    left: 90px;
+    bottom: 3%;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
 }
 
 .memo {
@@ -245,7 +523,7 @@
 .memolist {
     width: 300px;
     height: 100%;
-    overflow-x: hidden;
+    z-index: 999999;
 }
 
 .memolist .list .title {
@@ -269,7 +547,7 @@
 
 .memolist ul dl {
     padding: 10px;
-    transition: background 1s;
+    transition: all 0.5s ease-in 0s;
     width: 100%;
 }
 
@@ -305,9 +583,10 @@
     background-color: transparent;
 }
 
-.memolist ul .memo1:last-child > div {
+.memolist ul .memo1:last-child>div {
     padding: 5px;
 }
+
 .memolist ul span {
     font-size: 0.7rem;
 }

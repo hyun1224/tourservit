@@ -1,12 +1,14 @@
 @media (max-width:768px) {}
 
+/* main */
+
 .main {
-    font-size: 10px;
-    overflow-y: hidden;
+    font-size: 1rem;
     color: #252733;
     text-decoration: none;
-    height: 100vh;
     font-family: 'Inter', 'sans-serif';
+    overflow: hidden;
+    height: auto;
 }
 
 .background {
@@ -16,8 +18,10 @@
     background: #FFFFFF;
 }
 
+/* head */
+
 .head {
-    position: absolute;
+    position: fixed;
     width: 100%;
     top: 0;
     height: 6%;
@@ -25,8 +29,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 100px 0 20px;
+    padding: 0 70px 0 20px;
     z-index: 999;
+    background-color: #fff;
+
 }
 
 .logo {
@@ -114,14 +120,36 @@
     background-color: #3571FF;
 }
 
-.menubar {
+
+/* body */
+
+.body {
     position: absolute;
+    left: 0;
+    top: 6%;
+    display: flex;
+    width: 100%;
+    height: auto;
+    background: #FFFFFF;
+}
+
+/* nav */
+
+.nav {
+    display: flex;
+    height: 100vh;
+    position: fixed;
+    width: 13.5%;
+}
+
+
+/* menu */
+
+.menubar {
     display: flex;
     flex-direction: column;
     width: 60px;
-    height: 94%;
-    left: 0px;
-    bottom: 0;
+    height: 100vh;
     background: #3571FF;
     justify-content: flex-start;
     align-items: center;
@@ -146,15 +174,17 @@
 }
 
 .menu2 {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
     width: 190px;
-    height: 94%;
-    left: 60px;
-    bottom: 0;
+    height: 100vh;
     padding-top: 10px;
     color: #252733;
     border-right: 0.5px solid #DADADA;
+    background-color: #fff;
+
 }
+
 
 .menu2 .menu3 {
     color: #252733;
@@ -181,6 +211,7 @@
 .menu2 .menu3 span {
     font-family: 'Inter', sans-serif;
     transition: color 1s;
+    font-weight: bold;
 }
 
 .menu2 .menu3:hover {
@@ -215,6 +246,7 @@
 .menu5 span {
     font-size: 0.8rem;
     transition: color 0.5s;
+    font-weight: bold;
 }
 
 .menu4 {
@@ -225,6 +257,155 @@
 .menu5:hover span {
     color: #3571FF;
     background-color: transparent;
+}
+
+
+/* content */
+.content {
+    width: 87%;
+    padding: 40px 40px 30px;
+    position: absolute;
+    left: 250px;
+    top: 0;
+    background-color: #fff;
+}
+
+
+/* listhead */
+
+.body h3 {
+    font-size: 2rem;
+}
+
+
+
+.box {
+    box-sizing: border-box;
+    width: auto;
+    height: 710px;
+    background: #FFFFFF;
+    border: 2px solid #DADADA;
+    border-radius: 10px;
+    margin-top: 50px;
+    display: flex;
+    padding: 40px;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+}
+
+.image {
+    background-color: #DADADA;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 50px;
+}
+
+.upload {
+    margin-top: 40px;
+    width: 150px;
+    height: 45px;
+    border-radius: 30px;
+    background-color: #3571FF;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.upload:hover {
+    background-color: #3571FF;
+    box-shadow: none;
+}
+
+.right {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.formbox {
+    box-sizing: border-box;
+    width: 100%;
+    height: 550px;
+    background: #FAFAFA;
+    border: 1px solid #DADADA;
+    border-radius: 10px;
+
+}
+
+.btngroup {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.btngroup .btn {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #fff;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.btngroup .btn:first-child {
+    color: #FB104A;
+    border: 1px solid #FB104A;
+    margin-right: 50px;
+    transition: all 0.5s ease-in 0s;
+}
+
+.btngroup .btn:first-child:hover {
+    background-color: #FB104A;
+    color: #fff;
+}
+
+.btngroup .btn:last-child {
+    color: #3571FF;
+    border: 1px solid #3571FF;
+    transition: all 0.5s ease-in 0s;
+}
+
+.btngroup .btn:last-child:hover {
+    background-color: #3571FF;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* memo */
+
+.memobtn {
+    position: fixed;
+    left: 90px;
+    bottom: 3%;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
 }
 
 .memo {
@@ -245,7 +426,7 @@
 .memolist {
     width: 300px;
     height: 100%;
-    overflow-x: hidden;
+    z-index: 999999;
 }
 
 .memolist .list .title {
@@ -305,9 +486,10 @@
     background-color: transparent;
 }
 
-.memolist ul .memo1:last-child > div {
+.memolist ul .memo1:last-child>div {
     padding: 5px;
 }
+
 .memolist ul span {
     font-size: 0.7rem;
 }

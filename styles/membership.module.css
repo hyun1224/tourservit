@@ -1,0 +1,306 @@
+@media (max-width:768px) {
+
+    .main .image {
+        width: 0%;
+    }
+
+    .main .wrap {
+        left: 50%;
+    }
+
+    /* .main .logo {
+        background-size: 70%;
+    }
+
+    .main .email {
+        width: 200px;
+    }
+
+    .main .email label {
+        font-Size: 1rem;
+    }
+
+
+    .main .password {
+        width: 200px;
+    }
+
+    .main .password label {
+        font-Size: 1rem;
+    }
+
+
+    .main .login {
+        width: 200px;
+        height: 30px;
+    }
+
+    .main .login button {
+        font-size: 1rem;
+    }
+
+    .main .other {
+        width: 200px;
+        height: 30px;
+        top: 520px;
+    }
+
+    .main .other span {
+        padding: 0px 10px;
+    }
+
+    .main .social {
+        width: 200px;
+        height: 30px;
+        top: 580px;
+    }
+
+    .main .social span:nth-child(1) {
+        margin: 0 15px;
+        background-size: 100%;
+    }
+
+    .main .social span:nth-child(2) {
+        margin: 0 15px;
+        background-size: 100%;
+    }
+
+    .main .social span:nth-child(3) {
+        margin: 0 15px;
+        background-size: 100%;
+    }
+
+    .main .find {
+        width: 250px;
+        height: 10px;
+        top: 660px;
+    }
+
+    .main .find button {
+        color: #8B8B8B;
+        border-color: #8B8B8B;
+        padding: 0 10px;
+        transition: color 1s;
+        font-size: 0.7rem;
+    } */
+}
+
+.main {
+    font-size: 10px;
+    overflow-y: hidden;
+    color: #252733;
+    text-decoration: none;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    list-style: none;
+}
+
+.wrap {
+    position: absolute;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    top: 7%;
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #FFFFFF;
+}
+
+.image {
+    position: absolute;
+    width: 50%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: url(../public/image.png) center center;
+}
+
+.logo {
+    position: absolute;
+    left: 75%;
+    transform: translateX(-50%);
+    top: 80px;
+}
+
+.email {
+    position: absolute;
+    width: 300px;
+    height: 0px;
+    left: 75%;
+    transform: translateX(-50%);
+    top: 240px;
+    padding-top: 12px;
+    color: #8B8B8B;
+}
+
+
+.email label {
+    margin-top: 10px;
+    color: #8B8B8B;
+    font-size: 0.95rem;
+}
+
+.email input {
+    padding: 1px 0 7px 0;
+}
+
+
+.email div::before {
+    border-bottom: 1px solid #8B8B8B;
+}
+
+.email div::after {
+    border-bottom: 2px solid #3571FF;
+}
+
+
+.password {
+    position: absolute;
+    width: 300px;
+    height: 0px;
+    left: 75%;
+    transform: translateX(-50%);
+    top: 340px;
+    padding-top: 12px;
+    color: #8B8B8B;
+    border-color: #8B8B8B;
+}
+
+.password label {
+    margin-top: 10px;
+    color: #8B8B8B;
+    font-size: 0.95rem;
+}
+
+.password input {
+    padding: 1px 0 7px 0;
+}
+
+.password div::before {
+    border-bottom: 1px solid #8B8B8B;
+}
+
+.password div::after {
+    border-bottom: 2px solid #3571FF;
+}
+
+.icon button {
+    position: absolute;
+    top: 360px;
+    color: #8B8B8B;
+    margin-left: 100px;
+}
+
+.icon svg span {
+    opacity: 0;
+}
+
+
+.confirmpassword {
+    position: absolute;
+    width: 300px;
+    height: 0px;
+    left: 75%;
+    transform: translateX(-50%);
+    top: 440px;
+    padding-top: 12px;
+    color: #8B8B8B;
+}
+
+.confirmpassword label {
+    margin-top: 10px;
+    color: #8B8B8B;
+    font-size: 0.95rem;
+}
+
+.confirmpassword input {
+    padding: 1px 0 7px 0;
+}
+
+.confirmpassword div::before {
+    border-bottom: 1px solid #8B8B8B;
+}
+
+.confirmpassworddiv::after {
+    border-bottom: 2px solid #3571FF;
+}
+
+
+.icon1 button {
+    position: absolute;
+    top: 460px;
+    color: #8B8B8B;
+    margin-left: 100px;
+
+}
+
+.icon1 svg span {
+    opacity: 0;
+}
+
+.confirmpassword div::before {
+    border-bottom: 1px solid #8B8B8B;
+}
+
+.confirmpassword div::after {
+    border-bottom: 2px solid #3571FF;
+}
+
+
+.membership {
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    left: 75%;
+    transform: translateX(-50%);
+    top: 560px;
+    background-color: #fff;
+    border-radius: 50px;
+    border: 1px solid #3571FF;
+    color: #3571FF;
+    transition: color 1s, background 1s;
+    box-shadow: none;
+    font-weight: 600;
+}
+
+.membership:hover {
+    background-color: #3571FF;
+    color: #fff;
+    box-shadow: none;
+}
+
+
+.other {
+    position: absolute;
+    width: 300px;
+    height: 10px;
+    left: 75%;
+    transform: translateX(-50%);
+    top: 670px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.other span {
+    font-size: 0.8rem;
+    color: #8B8B8B;
+}
+
+.other span:first-child {
+    font-weight: 600;
+}
+
+.other span:last-child {
+    cursor: pointer;
+    transition: color 1s;
+}
+
+.other span:last-child:hover {
+    color: #3571FF;
+    font-weight: 700;
+}

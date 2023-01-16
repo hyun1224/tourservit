@@ -38,16 +38,18 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { styled } from "@mui/material/styles";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch, { SwitchProps } from "@mui/material/Switch";
-import LinkIcon from '@mui/icons-material/Link';
-import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
-import SendIcon from '@mui/icons-material/Send';
-import Pagination from '@mui/material/Pagination';
+import Switch, { SwitchProps } from "@mui/material/Switch"
 import Stack from '@mui/material/Stack';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+import { alpha, styled } from '@mui/material/styles';
+import Input from '@mui/material/Input';
+import NativeSelect from '@mui/material/NativeSelect';
+import MenuItem from '@mui/material/MenuItem';
+import FormHelperText from '@mui/material/FormHelperText';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-
+const ariaLabel = { 'aria-label': 'description' };
 
 
 const IOSSwitch = styled((props: SwitchProps) => (
@@ -102,6 +104,7 @@ const IOSSwitch = styled((props: SwitchProps) => (
 }));
 
 
+
 const inter = Inter({ subsets: ['latin'] })
 type Anchor = "right";
 function createData(
@@ -116,6 +119,12 @@ function createData(
 
 
 export default function Home() {
+    const [bank, setBank] = React.useState('');
+
+    const handleChange = (event: SelectChangeEvent) => {
+        setBank(event.target.value);
+    };
+
     const router = useRouter();
 
     const [open, setOpen] = React.useState(false);
@@ -486,7 +495,110 @@ export default function Home() {
                                 </div>
 
                                 <div className={styles.right}>
-                                    <div className={styles.formbox}></div>
+                                    <div className={styles.formbox}>
+                                        <TableContainer sx={{position : 'absolute', width : '100%'}}>
+                                            <Table aria-label="simple table">
+                                                <TableBody>
+                                                    <TableRow>
+                                                        <th>회사 명 <span>* 필수</span></th>
+                                                        <td>
+                                                            <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="회사 명을 입력해주세요" />
+                                                        </td>
+                                                        <th>사업자등록번호 <span>* 필수</span></th>
+                                                        <td>
+                                                            <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="사업자등록번호를 입력해주세요" />
+                                                        </td>
+                                                    </TableRow>
+
+                                                    <TableRow>
+                                                        <th>법인 명</th>
+                                                        <td>
+                                                            <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="법인 명을 입력해주세요" />
+                                                        </td>
+                                                        <th>법인등록번호</th>
+                                                        <td>
+                                                            <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="법인등록번호를 입력해주세요" />
+                                                        </td>
+                                                    </TableRow>
+
+                                                    <TableRow>
+                                                        <th>대표자 명 <span>* 필수</span></th>
+                                                        <td>
+                                                            <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="대표자 명을 입력해주세요" />
+                                                        </td>
+                                                        <th>홈페이지</th>
+                                                        <td>
+                                                            <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="홈페이지를 입력해주세요" />
+                                                        </td>
+                                                    </TableRow>
+
+                                                    <TableRow>
+                                                        <th>대표 전화번호 <span>* 필수</span></th>
+                                                        <td>
+                                                            <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="대표 전화번호를 입력해주세요" />
+                                                        </td>
+                                                        <th>대표 팩스번호 <span>* 필수</span></th>
+                                                        <td>
+                                                            <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="대표 팩스번호를 입력해주세요" />
+                                                        </td>
+                                                    </TableRow>
+
+                                                    <TableRow>
+                                                        <th>사업장 주소 <span>* 필수</span></th>
+                                                        <td>
+                                                            <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="사업장 주소를 입력해주세요" />
+                                                            <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="우편번호를 입력해주세요" />
+                                                        </td>
+
+
+                                                    </TableRow>
+
+                                                    <TableRow>
+                                                        <td>
+                                                            <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="상세 주소를 입력해주세요" />
+                                                        </td>
+                                                    </TableRow>
+
+                                                    <TableRow>
+                                                        <th>간단소개 <span>* 필수</span></th>
+                                                        <td>
+                                                            <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="간단한 소개를 등록해주세요(20자 이내)" />
+                                                        </td>
+                                                    </TableRow>
+
+                                                    <TableRow>
+                                                        <th>계좌번호 <span>* 필수</span></th>
+                                                        <td>
+                                                            <FormControl sx={{ width: '200px', background: '#fff' }}>
+                                                                <Select sx={{ height: '42px', borderRadius: '10px', color: '#252733' }}
+                                                                    value={bank}
+                                                                    onChange={handleChange}
+                                                                    displayEmpty
+                                                                    inputProps={{ 'aria-label': 'Without label' }}
+                                                                >
+                                                                    <MenuItem sx={{ color: '#dadada' }} value="">
+                                                                    선택해주세요
+                                                                    </MenuItem>
+                                                                    <MenuItem value={10}>부산은행</MenuItem>
+                                                                    <MenuItem value={20}>국민은행</MenuItem>
+                                                                    <MenuItem value={30}>신한은행</MenuItem>
+                                                                </Select>
+
+                                                            </FormControl>
+                                                        </td>
+                                                        <td>
+                                                            <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="계좌 번호를 입력해주세요" />
+                                                        </td>
+                                                        <td>
+                                                            <Button className={styles.add} variant="contained" ><AddIcon></AddIcon><span>추가</span></Button>
+                                                        </td>
+                                                    </TableRow>
+
+
+                                                </TableBody>
+                                            </Table>
+                                        </TableContainer>
+                                    </div>
 
                                     <div className={styles.btngroup}>
                                         <Button className={styles.btn} variant="contained">취소</Button>

@@ -377,7 +377,7 @@ export default function Home() {
                                             <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
                                                 <ListItemIcon sx={{ marginLeft: "-10px" }}>
                                                 </ListItemIcon>
-                                                <ListItemText  sx={{ color: '#3571ff' }} onClick={pd_2} primary="상품 추가" />
+                                                <ListItemText sx={{ color: '#3571ff' }} onClick={pd_2} primary="상품 추가" />
                                             </ListItemButton>
                                         </List>
                                     </Collapse>
@@ -483,7 +483,19 @@ export default function Home() {
                             </div>
 
                             <div className={styles.addtitle}>
-                                <div className={styles.phone}></div>
+                                <div className={styles.phone}>
+                                    <Paper sx={{ height: '1560px', position : 'relative' }}>
+                                        <div className={styles.header}>
+                                            <Image className={styles.image} src="" alt="나의여행"></Image>
+                                            <p>#부산훼리 #부산 #시모노세키 #왕복승선권</p>
+                                            <Button  className={styles.btn} variant="contained" ><span>예약 정보 입력</span></Button>
+                                        </div>
+
+                                        <div>
+                                            
+                                        </div>
+                                    </Paper>
+                                </div>
 
                                 <div className={styles.right}>
                                     <div className={styles.listform}>

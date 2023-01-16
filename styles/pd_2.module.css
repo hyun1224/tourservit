@@ -300,11 +300,66 @@
 
 .addtitle .phone {
     box-sizing: border-box;
-    width: 290px;
-    height: 610px;
+    width: 350px;
+    height: 680px;
     border: 5px solid #DADADA;
-    border-radius: 50px;
+    border-radius: 70px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
+
+.addtitle .phone .header {
+    height: 280px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #DADADA;
+}
+
+.addtitle .phone .header .image {
+    background-color: #DADADA;
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 50px 0 30px;
+}
+
+.addtitle .phone .header p {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+}
+
+
+
+.addtitle .phone .header .btn {
+    border: 1px solid #7698CC;
+    background-color: #fff;
+    color: #7698CC;
+    box-shadow: none;
+    border-radius: 20px;
+    transition: all 0.5s ease-in 0s;
+}
+
+
+.addtitle .phone .header .btn:hover {
+    background-color: #7698CC;
+    color: #fff;
+}
+
+
+
+
+
+
 
 /* right */
 
@@ -355,7 +410,7 @@
     border: 2px solid #DADADA;
 }
 
-.listform .list div > svg {
+.listform .list div>svg {
     color: #252733;
 }
 
@@ -438,7 +493,7 @@
     height: 50px;
     box-shadow: none;
     color: #252733;
-    border: 2px solid #DADADA;
+    border: 1px solid #DADADA;
     font-weight: 600;
     font-size: 1.1rem;
     padding-top: 9px;
@@ -479,7 +534,7 @@
 
 
 .checkbox label svg {
-    
+
     margin-right: 10px;
 }
 

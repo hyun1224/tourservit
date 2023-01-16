@@ -275,16 +275,76 @@
 
 .body h3 {
     font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.body .list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.body .list>div {
+    width: 300px;
+    box-shadow: none;
+    width: 300px;
+    height: 370px;
+    background: #FFFFFF;
+    border: 2px solid #DADADA;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.body .list>div .image {
+    width: 100px;
+    height: 100px;
+    background: #DADADA;
+    display: block;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.body .list>div h4 {
+    margin: 20px 0 10px;
+}
+
+.body .list>div p:nth-child(3) {
+    font-size: 0.8rem;
+}
+
+.body .list>div .box {
+    margin-top: 25px;
+    width: 250px;
+    height: 110px;
+    background: #F5F5F5;
+    border-radius: 10px;
+    padding: 20px 10px;
+}
+
+.body .list > div .box  p {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
 }
 
 
+.body .list > div .favor {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transition: all 0.5s ease-in 0s;
+    cursor: pointer;
+}
 
+.body .list > div .favor .FavoriteIcon {
+    color: #3571FF;
+}
 
-
-
-
-
-
+.body .list > div .favor .FavoriteBorderIcon {
+    color: #DADADA;
+}
 
 
 

@@ -32,23 +32,27 @@ import Box from "@mui/material/Box";
 import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
 import AddIcon from '@mui/icons-material/Add';
+import { styled } from "@mui/material/styles";
+import Switch, { SwitchProps } from "@mui/material/Switch";
+import Stack from '@mui/material/Stack';
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { styled } from "@mui/material/styles";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch, { SwitchProps } from "@mui/material/Switch";
-import LinkIcon from '@mui/icons-material/Link';
-import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
-import SendIcon from '@mui/icons-material/Send';
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
-
-
-
+import Input from '@mui/material/Input';
+import CallIcon from '@mui/icons-material/Call';
+import FaxIcon from '@mui/icons-material/Fax';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 const IOSSwitch = styled((props: SwitchProps) => (
     <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
@@ -116,6 +120,13 @@ function createData(
 
 
 export default function Home() {
+    const [expanded, setExpanded] = React.useState<string | false>('panel3');
+
+    const handleChange =
+        (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+            setExpanded(isExpanded ? panel : false);
+        };
+
     const router = useRouter();
 
     const [open, setOpen] = React.useState(false);
@@ -278,6 +289,8 @@ export default function Home() {
     const set_3 = () => {
         router.push("/set_3")
     }
+
+
     const [showPassword, setShowPassword] = React.useState(false);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -447,7 +460,7 @@ export default function Home() {
                                             <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
                                                 <ListItemIcon sx={{ marginLeft: "-10px" }}>
                                                 </ListItemIcon>
-                                                <ListItemText  onClick={set_1} primary="회사 정보" />
+                                                <ListItemText onClick={set_1} primary="회사 정보" />
                                             </ListItemButton>
                                         </List>
                                         <List component="div" disablePadding>
@@ -474,9 +487,190 @@ export default function Home() {
 
                     <div className={styles.content}>
                         <div>
-                            <h3 className={styles.title}>직원 목록</h3>
+                            <div className={styles.title}>
+                                <h3>직원 목록</h3>
 
+                                <Button className={styles.add} variant="contained" ><span>사원 추가</span></Button>
+                            </div>
+
+                            <div className={styles.listform}>
+                                <Accordion sx={{ display: 'flex', flexDirection: 'column', marginBottom : '20px' }} className={styles.list} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                                    <AccordionSummary
+                                        expandIcon={<ExpandMoreIcon />}
+                                        aria-controls="panel1bh-content"
+                                        id="panel1bh-header"
+                                    >
+                                        <Typography sx={{
+                                            flexShrink: 0, fontSize: '1.3rem',
+                                            marginLeft: '20px',
+                                            fontWeight: '600'
+                                        }}>
+                                            기획팀 하동현 팀장 (hj4ds@naver.com)
+                                        </Typography>
+
+                                    </AccordionSummary>
+
+                                    <AccordionDetails sx={{ display: 'flex', alignItems: 'center' }}>
+                                        <div className={styles.left}>
+                                            <Image className={styles.image} src="" alt="TourServiT"></Image>
+
+                                            <div className={styles.text}>
+                                                <div className={styles.title}>
+                                                    <h5>하동현 <span>HA DONG HYOUN</span></h5>
+                                                    <h6>기획팀 / 팀장</h6>
+                                                </div>
+
+                                                <p><CallIcon></CallIcon> 010-7166-3001</p>
+                                                <p><FaxIcon></FaxIcon> 050-4230-8463</p>
+                                                <p><MailOutlineIcon></MailOutlineIcon> hj4ds@naver.com</p>
+                                            </div>
+                                        </div>
+
+                                        <div className={styles.right}>
+                                            <TableContainer>
+                                                <Table aria-label="simple table">
+                                                    <TableBody sx={{ height: '250px' }}>
+                                                        <TableRow>
+                                                            <th>메일 주소</th>
+                                                            <td>
+                                                                <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="메일주소를 입력해주세요" />
+                                                            </td>
+                                                        </TableRow>
+
+                                                        <TableRow>
+                                                            <th>이름</th>
+                                                            <td>
+                                                                <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="이름을 입력해주세요" />
+                                                            </td>
+                                                            <th>영문이름</th>
+                                                            <td>
+                                                                <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="영문이름을 입력해주세요" />
+                                                            </td>
+                                                        </TableRow>
+
+                                                        <TableRow>
+                                                            <th>부서</th>
+                                                            <td>
+                                                                <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="부서를 입력해주세요" />
+                                                            </td>
+                                                            <th>직위</th>
+                                                            <td>
+                                                                <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="직위를 입력해주세요" />
+                                                            </td>
+                                                        </TableRow>
+
+                                                        <TableRow>
+                                                            <th>전화번호</th>
+                                                            <td>
+                                                                <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="전화번호를 입력해주세요" />
+                                                            </td>
+                                                            <th>팩스번호</th>
+                                                            <td>
+                                                                <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="팩스번호를 입력해주세요" />
+                                                            </td>
+                                                        </TableRow>
+                                                    </TableBody>
+                                                </Table>
+                                            </TableContainer>
+                                        </div>
+                                    </AccordionDetails>
+
+                                    <div className={styles.btngroup}>
+                                        <Button className={styles.btn} variant="contained">수정</Button>
+                                        <Button className={styles.btn} variant="contained">취소</Button>
+                                    </div>
+                                </Accordion>
+
+                                <Accordion sx={{ display: 'flex', flexDirection: 'column', marginBottom : '20px'  }} className={styles.list} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                                    <AccordionSummary
+                                        expandIcon={<ExpandMoreIcon />}
+                                        aria-controls="panel1bh-content"
+                                        id="panel1bh-header"
+                                    >
+                                        <Typography sx={{
+                                            flexShrink: 0, fontSize: '1.3rem',
+                                            marginLeft: '20px',
+                                            fontWeight: '600'
+                                        }}>
+                                            기획팀 하동현 팀장 (hj4ds@naver.com)
+                                        </Typography>
+
+                                    </AccordionSummary>
+
+                                    <AccordionDetails sx={{ display: 'flex', alignItems: 'center' }}>
+                                        <div className={styles.left}>
+                                            <Image className={styles.image} src="" alt="TourServiT"></Image>
+
+                                            <div className={styles.text}>
+                                                <div className={styles.title}>
+                                                    <h5>하동현 <span>HA DONG HYOUN</span></h5>
+                                                    <h6>기획팀 / 팀장</h6>
+                                                </div>
+
+                                                <p><CallIcon></CallIcon> 010-7166-3001</p>
+                                                <p><FaxIcon></FaxIcon> 050-4230-8463</p>
+                                                <p><MailOutlineIcon></MailOutlineIcon> hj4ds@naver.com</p>
+                                            </div>
+                                        </div>
+
+                                        <div className={styles.right}>
+                                            <TableContainer>
+                                                <Table aria-label="simple table">
+                                                    <TableBody sx={{ height: '250px' }}>
+                                                        <TableRow>
+                                                            <th>메일 주소</th>
+                                                            <td>
+                                                                <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="메일주소를 입력해주세요" />
+                                                            </td>
+                                                        </TableRow>
+
+                                                        <TableRow>
+                                                            <th>이름</th>
+                                                            <td>
+                                                                <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="이름을 입력해주세요" />
+                                                            </td>
+                                                            <th>영문이름</th>
+                                                            <td>
+                                                                <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="영문이름을 입력해주세요" />
+                                                            </td>
+                                                        </TableRow>
+
+                                                        <TableRow>
+                                                            <th>부서</th>
+                                                            <td>
+                                                                <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="부서를 입력해주세요" />
+                                                            </td>
+                                                            <th>직위</th>
+                                                            <td>
+                                                                <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="직위를 입력해주세요" />
+                                                            </td>
+                                                        </TableRow>
+
+                                                        <TableRow>
+                                                            <th>전화번호</th>
+                                                            <td>
+                                                                <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="전화번호를 입력해주세요" />
+                                                            </td>
+                                                            <th>팩스번호</th>
+                                                            <td>
+                                                                <Input sx={{ '&.MuiInput-root:hover:not(.Mui-disabled,.Mui-error):before': { border: 'none' } }} placeholder="팩스번호를 입력해주세요" />
+                                                            </td>
+                                                        </TableRow>
+                                                    </TableBody>
+                                                </Table>
+                                            </TableContainer>
+                                        </div>
+                                    </AccordionDetails>
+
+                                    <div className={styles.btngroup}>
+                                        <Button className={styles.btn} variant="contained">수정</Button>
+                                        <Button className={styles.btn} variant="contained">취소</Button>
+                                    </div>
+                                </Accordion>
+                            </div>
                         </div>
+
+
 
 
                     </div>
@@ -485,23 +679,25 @@ export default function Home() {
 
 
             </main>
-            {(["right"] as const).map((anchor) => (
-                <React.Fragment key={anchor}>
-                    <Button className={styles.memobtn}
-                        onClick={toggleDrawer(anchor, true)}>
-                        <Fab className={styles.memo} color="secondary" aria-label="edit">
-                            <EditIcon />
-                        </Fab>
-                    </Button>
-                    <Drawer
-                        anchor={anchor}
-                        open={state[anchor]}
-                        onClose={toggleDrawer(anchor, false)}
-                    >
-                        {list(anchor)}
-                    </Drawer>
-                </React.Fragment>
-            ))}
+            {
+                (["right"] as const).map((anchor) => (
+                    <React.Fragment key={anchor}>
+                        <Button className={styles.memobtn}
+                            onClick={toggleDrawer(anchor, true)}>
+                            <Fab className={styles.memo} color="secondary" aria-label="edit">
+                                <EditIcon />
+                            </Fab>
+                        </Button>
+                        <Drawer
+                            anchor={anchor}
+                            open={state[anchor]}
+                            onClose={toggleDrawer(anchor, false)}
+                        >
+                            {list(anchor)}
+                        </Drawer>
+                    </React.Fragment>
+                ))
+            }
         </>
     )
 }

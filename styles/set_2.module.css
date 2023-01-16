@@ -93,7 +93,7 @@
     border-radius: 50px;
     border: 1px solid #3571FF;
     color: #3571FF;
-    transition: color 1s, background 1s;
+    transition: all 0.5s ease-in 0s;
     box-shadow: none;
     font-weight: 600;
 }
@@ -159,7 +159,7 @@
 .menubar svg {
     opacity: 1;
     cursor: pointer;
-    transition: opacity 0.5s;
+    transition: all 0.5s ease-in 0s;
 }
 
 .menubar:hover svg:not(:hover) {
@@ -190,7 +190,7 @@
     color: #252733;
     height: 40px;
     margin: 5px 0;
-    transition: background 0.5s, opacity 0.5s;
+    transition: all 0.5s ease-in 0s;
 }
 
 .menu2:hover .menu3:not(:hover) {
@@ -201,7 +201,7 @@
     color: #252733;
     width: 22px;
     height: 22px;
-    transition: color 1s;
+    transition: all 0.5s ease-in 0s;
 }
 
 .menu2 .menu3 div {
@@ -245,7 +245,7 @@
 
 .menu5 span {
     font-size: 0.8rem;
-    transition: color 0.5s;
+    transition: all 0.5s ease-in 0s;
     font-weight: bold;
 }
 
@@ -277,7 +277,201 @@
     font-size: 2rem;
 }
 
+.body .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 50px;
 
+}
+
+.body .title span form {
+    width: 245px;
+    height: 40px;
+}
+
+
+.body .title .add {
+    width: 140px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: none;
+    border: 1px solid #3571FF;
+    color: #3571FF;
+    font-weight: 600;
+    transition: all 0.5s ease-in 0s;
+}
+
+.body .title .add:hover {
+    background: #3571FF;
+    color: #fff;
+}
+
+
+/* list */
+
+.listform>.list {
+    width: 100%;
+    box-shadow: none;
+    border: 2px solid #DADADA;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+
+}
+
+.listform>.list::before {
+    background-color : none;
+    height: 0;
+}
+
+
+
+
+
+/* left */
+
+.listform>.list .left {
+    box-sizing: border-box;
+    width: 35%;
+    height: 300px;
+    background: #FAFAFA;
+    border: 1px solid #DADADA;
+    border-radius: 10px;
+    margin: 20px 40px;
+    padding: 50px 30px;
+    display: flex;
+}
+
+.listform>.list .left .image {
+    width: 120px;
+    height: 120px;
+    background-color: #DADADA;
+    display: block;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+
+.listform>.list .left .text .title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.listform>.list .left .text h5 {
+    font-size: 1.6rem;
+    padding-bottom: 15px;
+}
+
+.listform>.list .left .text h5 span {
+    font-size: 0.8rem;
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+.listform>.list .left .text h6 {
+    font-size: 1rem;
+}
+
+
+.listform>.list .left .text p {
+    color: #8F9096;
+    display: flex;
+    align-items: center;
+margin-bottom: 10px;
+}
+
+.listform>.list .left .text p svg { 
+    width: 20px; 
+    margin-right: 10px;
+}
+
+
+
+/* right */
+
+.listform>.list .right {
+    box-sizing: border-box;
+    width: 58%;
+    height: 300px;
+    background: #FAFAFA;
+    border: 1px solid #DADADA;
+    border-radius: 10px;
+    padding: 25px 40px 40px 60px;
+    text-align: left;
+}
+
+
+
+.listform>.list .right td input {
+    font-size: 0.8rem;
+    border: 1px solid #dadada;
+    border-radius: 10px;
+    width: 220px;
+    height: 30px;
+    background-color: #fff;
+    padding: 5px 10px;
+    transition: all 0.5s ease-in 0s;
+}
+
+
+.listform>.list .right td div::before {
+    border: none;
+}
+
+.listform>.list .right td div::after {
+    border: none;
+}
+
+.listform>.list .right td input:hover {
+    border: 1px solid #3571FF;
+}
+
+
+
+
+
+
+.btngroup {
+    margin: -10px 0 20px 1290px;
+
+}
+
+.btngroup .btn {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #fff;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+
+.btngroup .btn:first-child {
+    color: #3571FF;
+    border: 1px solid #3571FF;
+    transition: all 0.5s ease-in 0s;
+    margin-right: 30px;
+}
+
+.btngroup .btn:first-child:hover {
+    background-color: #3571FF;
+    color: #fff;
+}
+
+
+.btngroup .btn:last-child {
+    color: #FB104A;
+    border: 1px solid #FB104A;
+
+    transition: all 0.5s ease-in 0s;
+}
+
+.btngroup .btn:last-child:hover {
+    background-color: #FB104A;
+    color: #fff;
+}
 
 
 
@@ -341,7 +535,7 @@
 
 .memolist ul dl {
     padding: 10px;
-    transition: background 1s;
+    transition: all 0.5s ease-in 0s;
     width: 100%;
 }
 

@@ -46,9 +46,24 @@ import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import SendIcon from '@mui/icons-material/Send';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 
+
+const bull = (
+    <Box
+        component="span"
+        sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+    >
+        •
+    </Box>
+);
 
 const IOSSwitch = styled((props: SwitchProps) => (
     <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
@@ -116,6 +131,14 @@ function createData(
 
 
 export default function Home() {
+
+    const [Favorite, setFavorite] = React.useState(false);
+
+    const handleFavorite = () => {
+        setFavorite(!Favorite);
+    };
+
+
     const router = useRouter();
 
     const [open, setOpen] = React.useState(false);
@@ -461,7 +484,7 @@ export default function Home() {
                                             <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
                                                 <ListItemIcon sx={{ marginLeft: "-10px" }}>
                                                 </ListItemIcon>
-                                                <ListItemText  sx={{ color: '#3571ff' }} onClick={set_3} primary="연합사 목록" />
+                                                <ListItemText sx={{ color: '#3571ff' }} onClick={set_3} primary="연합사 목록" />
                                             </ListItemButton>
                                         </List>
                                     </Collapse>
@@ -473,11 +496,174 @@ export default function Home() {
                     </div>
 
                     <div className={styles.content}>
-                        <div>
-                            <h3 className={styles.title}>연합사 목록</h3>
+                        <h3 className={styles.title}>연합사 목록</h3>
 
+                        <div className={styles.list}>
+                            <Card>
+                                <CardContent>
+                                    <Typography><Image className={styles.image} src="" alt="TourServiT"></Image></Typography>
+
+                                    <Typography>
+                                        <h4>투어서비스</h4>
+                                    </Typography>
+
+                                    <Typography>
+                                        여행 서비스는  Tour Service IT
+                                    </Typography>
+                                    <div className={styles.box} >
+                                        <Typography>
+                                            안녕하세요.
+                                        </Typography>
+                                        <Typography>
+                                            테스트를 위한 연합사입니다.
+                                        </Typography>
+                                        <Typography>
+                                            테스트용 연합 상품이 있습니다.
+                                        </Typography>
+                                    </div>
+
+                                    <div className={styles.favor} onClick={handleFavorite}>
+                                        {Favorite ? (
+                                            <FavoriteIcon className={styles.FavoriteIcon} />
+                                        ) : (
+                                            <FavoriteBorderIcon className={styles.FavoriteBorderIcon} />
+                                        )}
+                                    </div>
+                                </CardContent>
+                            </Card>
+
+                            <Card>
+                                <CardContent>
+                                    <Typography><Image className={styles.image} src="" alt="TourServiT"></Image></Typography>
+
+                                    <Typography>
+                                        <h4>나의 여행</h4>
+                                    </Typography>
+
+                                    <Typography>
+                                        모든 순간이 여행 나의 여행
+                                    </Typography>
+                                    <div className={styles.box} >
+                                        <Typography>
+                                            안녕하세요.
+                                        </Typography>
+                                        <Typography>
+                                            테스트를 위한 연합사입니다.
+                                        </Typography>
+                                        <Typography>
+                                            테스트용 연합 상품이 있습니다.
+                                        </Typography>
+                                    </div>
+
+                                    <div className={styles.favor} onClick={handleFavorite}>
+                                        {Favorite ? (
+                                            <FavoriteIcon className={styles.FavoriteIcon} />
+                                        ) : (
+                                            <FavoriteBorderIcon className={styles.FavoriteBorderIcon} />
+                                        )}
+                                    </div>
+                                </CardContent>
+                            </Card>
+
+                            <Card>
+                                <CardContent>
+                                    <Typography><Image className={styles.image} src="" alt="TourServiT"></Image></Typography>
+
+                                    <Typography>
+                                        <h4>나의 여행</h4>
+                                    </Typography>
+
+                                    <Typography>
+                                        모든 순간이 여행 나의 여행
+                                    </Typography>
+                                    <div className={styles.box} >
+                                        <Typography>
+                                            안녕하세요.
+                                        </Typography>
+                                        <Typography>
+                                            테스트를 위한 연합사입니다.
+                                        </Typography>
+                                        <Typography>
+                                            테스트용 연합 상품이 있습니다.
+                                        </Typography>
+                                    </div>
+
+                                    <div className={styles.favor} onClick={handleFavorite}>
+                                        {Favorite ? (
+                                            <FavoriteIcon className={styles.FavoriteIcon} />
+                                        ) : (
+                                            <FavoriteBorderIcon className={styles.FavoriteBorderIcon} />
+                                        )}
+                                    </div>
+                                </CardContent>
+                            </Card>
+
+                            <Card>
+                                <CardContent>
+                                    <Typography><Image className={styles.image} src="" alt="TourServiT"></Image></Typography>
+
+                                    <Typography>
+                                        <h4>나의 여행</h4>
+                                    </Typography>
+
+                                    <Typography>
+                                        모든 순간이 여행 나의 여행
+                                    </Typography>
+                                    <div className={styles.box} >
+                                        <Typography>
+                                            안녕하세요.
+                                        </Typography>
+                                        <Typography>
+                                            테스트를 위한 연합사입니다.
+                                        </Typography>
+                                        <Typography>
+                                            테스트용 연합 상품이 있습니다.
+                                        </Typography>
+                                    </div>
+
+                                    <div className={styles.favor} onClick={handleFavorite}>
+                                        {Favorite ? (
+                                            <FavoriteIcon className={styles.FavoriteIcon} />
+                                        ) : (
+                                            <FavoriteBorderIcon className={styles.FavoriteBorderIcon} />
+                                        )}
+                                    </div>
+                                </CardContent>
+                            </Card>
+
+                            <Card>
+                                <CardContent>
+                                    <Typography><Image className={styles.image} src="" alt="TourServiT"></Image></Typography>
+
+                                    <Typography>
+                                        <h4>나의 여행</h4>
+                                    </Typography>
+
+                                    <Typography>
+                                        모든 순간이 여행 나의 여행
+                                    </Typography>
+                                    <div className={styles.box} >
+                                        <Typography>
+                                            안녕하세요.
+                                        </Typography>
+                                        <Typography>
+                                            테스트를 위한 연합사입니다.
+                                        </Typography>
+                                        <Typography>
+                                            테스트용 연합 상품이 있습니다.
+                                        </Typography>
+                                    </div>
+
+                                    <div className={styles.favor} onClick={handleFavorite}>
+                                        {Favorite ? (
+                                            <FavoriteIcon className={styles.FavoriteIcon} />
+                                        ) : (
+                                            <FavoriteBorderIcon className={styles.FavoriteBorderIcon} />
+                                        )}
+                                    </div>
+                                </CardContent>
+                            </Card>
                         </div>
-
 
                     </div>
                 </div>

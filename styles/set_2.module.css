@@ -332,6 +332,12 @@
 
 /* left */
 
+.left .picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .listform>.list .left {
     box-sizing: border-box;
     width: 35%;
@@ -342,6 +348,7 @@
     margin: 20px 40px;
     padding: 50px 30px;
     display: flex;
+    justify-content: space-around;
 }
 
 .listform>.list .left .image {
@@ -350,9 +357,13 @@
     background-color: #DADADA;
     display: block;
     border-radius: 50%;
-    margin-right: 50px;
+    margin-bottom: 20px;
 }
 
+.listform>.list .left .text 
+{
+    margin-left: 30px;
+}
 .listform>.list .left .text .title {
     display: flex;
     flex-direction: column;

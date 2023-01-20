@@ -496,7 +496,7 @@ export default function Home() {
 
                                 <div className={styles.right}>
                                     <div className={styles.formbox}>
-                                        <TableContainer sx={{position : 'absolute', width : '100%'}}>
+                                        <TableContainer sx={{ position: 'absolute', width: '100%' }}>
                                             <Table aria-label="simple table">
                                                 <TableBody>
                                                     <TableRow>
@@ -566,7 +566,7 @@ export default function Home() {
                                                         </td>
                                                     </TableRow>
 
-                                                    <TableRow>
+                                                    <TableRow sx={{ '&. MuiOutlinedInput-notchedOutline': { border: '1px solid #3571FF' } }}>
                                                         <th>계좌번호 <span>* 필수</span></th>
                                                         <td>
                                                             <FormControl sx={{ width: '200px', background: '#fff' }}>
@@ -577,7 +577,7 @@ export default function Home() {
                                                                     inputProps={{ 'aria-label': 'Without label' }}
                                                                 >
                                                                     <MenuItem sx={{ color: '#dadada' }} value="">
-                                                                    선택해주세요
+                                                                        선택해주세요
                                                                     </MenuItem>
                                                                     <MenuItem value={10}>부산은행</MenuItem>
                                                                     <MenuItem value={20}>국민은행</MenuItem>
@@ -615,6 +615,9 @@ export default function Home() {
 
 
             </main>
+
+
+
             {(["right"] as const).map((anchor) => (
                 <React.Fragment key={anchor}>
                     <Button className={styles.memobtn}

@@ -494,7 +494,7 @@ export default function Home() {
                             </div>
 
                             <div className={styles.listform}>
-                                <Accordion sx={{ display: 'flex', flexDirection: 'column', marginBottom : '20px' }} className={styles.list} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                                <Accordion sx={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }} className={styles.list} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                                     <AccordionSummary
                                         expandIcon={<ExpandMoreIcon />}
                                         aria-controls="panel1bh-content"
@@ -512,7 +512,10 @@ export default function Home() {
 
                                     <AccordionDetails sx={{ display: 'flex', alignItems: 'center' }}>
                                         <div className={styles.left}>
-                                            <Image className={styles.image} src="" alt="TourServiT"></Image>
+                                            <div className={styles.picture}>
+                                                <Image className={styles.image} src="" alt="TourServiT"></Image>
+                                                <Button sx={{ backgroundColor: '#3571FF', borderRadius: '20px', width: '100px' }} variant="contained">사진 추가</Button>
+                                            </div>
 
                                             <div className={styles.text}>
                                                 <div className={styles.title}>
@@ -581,7 +584,7 @@ export default function Home() {
                                     </div>
                                 </Accordion>
 
-                                <Accordion sx={{ display: 'flex', flexDirection: 'column', marginBottom : '20px'  }} className={styles.list} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                                <Accordion sx={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }} className={styles.list} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                                     <AccordionSummary
                                         expandIcon={<ExpandMoreIcon />}
                                         aria-controls="panel1bh-content"
@@ -599,8 +602,10 @@ export default function Home() {
 
                                     <AccordionDetails sx={{ display: 'flex', alignItems: 'center' }}>
                                         <div className={styles.left}>
-                                            <Image className={styles.image} src="" alt="TourServiT"></Image>
-
+                                            <div className={styles.picture}>
+                                                <Image className={styles.image} src="" alt="TourServiT"></Image>
+                                                <Button sx={{ backgroundColor: '#3571FF', borderRadius: '20px', width: '100px' }} variant="contained">사진 추가</Button>
+                                            </div>
                                             <div className={styles.text}>
                                                 <div className={styles.title}>
                                                     <h5>하동현 <span>HA DONG HYOUN</span></h5>

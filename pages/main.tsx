@@ -33,12 +33,37 @@ import Box from "@mui/material/Box";
 import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
 import AddIcon from '@mui/icons-material/Add';
+import MenuIcon from '@mui/icons-material/Menu';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
+import { styled, useTheme } from '@mui/material/styles';
+
+const drawerWidth = 240;
+
+
+
+interface AppBarProps extends MuiAppBarProps {
+    open?: boolean;
+}
+
 
 
 const inter = Inter({ subsets: ['latin'] })
 type Anchor = "right";
 
 export default function Home() {
+    const theme = useTheme();
+
+    const handleDrawerOpen = () => {
+        setOpen(true);
+    };
+
+    const handleDrawerClose = () => {
+        setOpen(false);
+    };
+
+
 
     const link = () => {
         router.push("/")
@@ -270,127 +295,157 @@ export default function Home() {
                     <ListAltIcon className={styles.menu}></ListAltIcon>
                     <CalculateIcon className={styles.menu}></CalculateIcon>
                     <SettingsIcon className={styles.menu}></SettingsIcon>
+                    <Box>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            sx={{ mr: 2, ...(open && { display: 'none' }) }} >
+                            <MenuIcon />
+                        </IconButton>
+
+
+
+                        <Drawer
+                            variant="persistent"
+                            anchor="left"
+                            open={open}
+                        >
+
+                            <IconButton onClick={handleDrawerClose}>
+                                {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                            </IconButton>
+
+
+                            <Divider />
+                            <List className={styles.menu2}
+                                component="nav"
+                            >
+                                <div>
+                                    <ListItemButton className={styles.menu3} onClick={handleClick1}>
+                                        <ListItemIcon>
+                                            <InventoryIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="상품 관리" />
+                                        {open1 ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
+                                    </ListItemButton>
+
+                                    <Collapse className={styles.menu4} in={open1} timeout="auto" unmountOnExit>
+                                        <List component="div" disablePadding>
+                                            <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
+                                                <ListItemIcon sx={{ marginLeft: "-10px" }}>
+                                                </ListItemIcon>
+                                                <ListItemText onClick={pd_1} primary="상품 목록" />
+                                            </ListItemButton>
+                                        </List>
+                                        <List component="div" disablePadding>
+                                            <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
+                                                <ListItemIcon sx={{ marginLeft: "-10px" }}>
+                                                </ListItemIcon>
+                                                <ListItemText onClick={pd_2} primary="상품 추가" />
+                                            </ListItemButton>
+                                        </List>
+                                    </Collapse>
+                                </div>
+
+                                <div>
+                                    <ListItemButton className={styles.menu3} onClick={handleClick2}>
+                                        <ListItemIcon>
+                                            <ListAltIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="예약 관리" />
+                                        {open2 ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
+                                    </ListItemButton>
+
+                                    <Collapse className={styles.menu4} in={open2} timeout="auto" unmountOnExit>
+                                        <List component="div" disablePadding>
+                                            <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
+                                                <ListItemIcon sx={{ marginLeft: "-10px" }}>
+                                                </ListItemIcon>
+                                                <ListItemText onClick={rv_1} primary="예약 일정" />
+                                            </ListItemButton>
+                                        </List>
+                                        <List component="div" disablePadding>
+                                            <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
+                                                <ListItemIcon sx={{ marginLeft: "-10px" }}>
+                                                </ListItemIcon>
+                                                <ListItemText onClick={rv_2} primary="예약 명단" />
+                                            </ListItemButton>
+                                        </List>
+                                    </Collapse>
+                                </div>
+
+                                <div>
+                                    <ListItemButton className={styles.menu3} onClick={handleClick3}>
+                                        <ListItemIcon>
+                                            <CalculateIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="정산 관리" />
+                                        {open3 ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
+                                    </ListItemButton>
+
+                                    <Collapse className={styles.menu4} in={open3} timeout="auto" unmountOnExit>
+                                        <List component="div" disablePadding>
+                                            <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
+                                                <ListItemIcon sx={{ marginLeft: "-10px" }}>
+                                                </ListItemIcon>
+                                                <ListItemText onClick={calc_1} primary="입금 목록" />
+                                            </ListItemButton>
+                                        </List>
+                                        <List component="div" disablePadding>
+                                            <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
+                                                <ListItemIcon sx={{ marginLeft: "-10px" }}>
+                                                </ListItemIcon>
+                                                <ListItemText onClick={calc_2} primary="은행 명단" />
+                                            </ListItemButton>
+                                        </List>
+                                    </Collapse>
+                                </div>
+
+                                <div>
+                                    <ListItemButton className={styles.menu3} onClick={handleClick4}>
+                                        <ListItemIcon>
+                                            <SettingsIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="환경 설정" />
+                                        {open4 ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
+                                    </ListItemButton>
+
+                                    <Collapse className={styles.menu4} in={open4} timeout="auto" unmountOnExit>
+                                        <List component="div" disablePadding>
+                                            <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
+                                                <ListItemIcon sx={{ marginLeft: "-10px" }}>
+                                                </ListItemIcon>
+                                                <ListItemText onClick={set_1} primary="회사 정보" />
+                                            </ListItemButton>
+                                        </List>
+                                        <List component="div" disablePadding>
+                                            <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
+                                                <ListItemIcon sx={{ marginLeft: "-10px" }}>
+                                                </ListItemIcon>
+                                                <ListItemText onClick={set_2} primary="직원 목록" />
+                                            </ListItemButton>
+                                        </List>
+                                        <List component="div" disablePadding>
+                                            <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
+                                                <ListItemIcon sx={{ marginLeft: "-10px" }}>
+                                                </ListItemIcon>
+                                                <ListItemText onClick={set_3} primary="연합사 목록" />
+                                            </ListItemButton>
+                                        </List>
+                                    </Collapse>
+                                </div>
+
+                            </List>
+                            <Divider />
+
+                        </Drawer>
+
+                    </Box>
                 </div>
 
-                <List className={styles.menu2}
-                    component="nav"
-                >
-                    <div>
-                        <ListItemButton className={styles.menu3} onClick={handleClick1}>
-                            <ListItemIcon>
-                                <InventoryIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="상품 관리" />
-                            {open1 ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
-                        </ListItemButton>
 
-                        <Collapse className={styles.menu4} in={open1} timeout="auto" unmountOnExit>
-                            <List component="div" disablePadding>
-                                <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
-                                    <ListItemIcon sx={{ marginLeft: "-10px" }}>
-                                    </ListItemIcon>
-                                    <ListItemText onClick={pd_1} primary="상품 목록" />
-                                </ListItemButton>
-                            </List>
-                            <List component="div" disablePadding>
-                                <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
-                                    <ListItemIcon sx={{ marginLeft: "-10px" }}>
-                                    </ListItemIcon>
-                                    <ListItemText onClick={pd_2} primary="상품 추가" />
-                                </ListItemButton>
-                            </List>
-                        </Collapse>
-                    </div>
-
-                    <div>
-                        <ListItemButton className={styles.menu3} onClick={handleClick2}>
-                            <ListItemIcon>
-                                <ListAltIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="예약 관리" />
-                            {open2 ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
-                        </ListItemButton>
-
-                        <Collapse className={styles.menu4} in={open2} timeout="auto" unmountOnExit>
-                            <List component="div" disablePadding>
-                                <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
-                                    <ListItemIcon sx={{ marginLeft: "-10px" }}>
-                                    </ListItemIcon>
-                                    <ListItemText onClick={rv_1} primary="예약 일정" />
-                                </ListItemButton>
-                            </List>
-                            <List component="div" disablePadding>
-                                <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
-                                    <ListItemIcon sx={{ marginLeft: "-10px" }}>
-                                    </ListItemIcon>
-                                    <ListItemText onClick={rv_2} primary="예약 명단" />
-                                </ListItemButton>
-                            </List>
-                        </Collapse>
-                    </div>
-
-                    <div>
-                        <ListItemButton className={styles.menu3} onClick={handleClick3}>
-                            <ListItemIcon>
-                                <CalculateIcon />
-                            </ListItemIcon>
-                            <ListItemText  primary="정산 관리" />
-                            {open3 ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
-                        </ListItemButton>
-
-                        <Collapse className={styles.menu4} in={open3} timeout="auto" unmountOnExit>
-                            <List component="div" disablePadding>
-                                <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
-                                    <ListItemIcon sx={{ marginLeft: "-10px" }}>
-                                    </ListItemIcon>
-                                    <ListItemText onClick={calc_1} primary="입금 목록" />
-                                </ListItemButton>
-                            </List>
-                            <List component="div" disablePadding>
-                                <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
-                                    <ListItemIcon sx={{ marginLeft: "-10px" }}>
-                                    </ListItemIcon>
-                                    <ListItemText onClick={calc_2} primary="은행 명단" />
-                                </ListItemButton>
-                            </List>
-                        </Collapse>
-                    </div>
-
-                    <div>
-                        <ListItemButton className={styles.menu3} onClick={handleClick4}>
-                            <ListItemIcon>
-                                <SettingsIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="환경 설정" />
-                            {open4 ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
-                        </ListItemButton>
-
-                        <Collapse className={styles.menu4} in={open4} timeout="auto" unmountOnExit>
-                            <List component="div" disablePadding>
-                                <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
-                                    <ListItemIcon sx={{ marginLeft: "-10px" }}>
-                                    </ListItemIcon>
-                                    <ListItemText onClick={set_1} primary="회사 정보" />
-                                </ListItemButton>
-                            </List>
-                            <List component="div" disablePadding>
-                                <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
-                                    <ListItemIcon sx={{ marginLeft: "-10px" }}>
-                                    </ListItemIcon>
-                                    <ListItemText onClick={set_2} primary="직원 목록" />
-                                </ListItemButton>
-                            </List>
-                            <List component="div" disablePadding>
-                                <ListItemButton className={styles.menu5} sx={{ height: "30px" }}>
-                                    <ListItemIcon sx={{ marginLeft: "-10px" }}>
-                                    </ListItemIcon>
-                                    <ListItemText onClick={set_3} primary="연합사 목록" />
-                                </ListItemButton>
-                            </List>
-                        </Collapse>
-                    </div>
-
-                </List>
 
 
 

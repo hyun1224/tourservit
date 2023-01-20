@@ -455,6 +455,14 @@
     width: 450px;
 }
 
+.formbox table tr:nth-child(8) fieldset {
+    border: 1px solid #DADADA;
+}
+
+.formbox table tr:nth-child(8) fieldset:focus {
+    border: 1px solid #3571FF;
+}
+
 .formbox table tr:nth-child(8) .add {
     position: absolute;
     right: 125px;

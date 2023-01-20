@@ -52,6 +52,9 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import CallIcon from '@mui/icons-material/Call';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import InfoIcon from '@mui/icons-material/Info';
 
 
 
@@ -501,25 +504,39 @@ export default function Home() {
                         <div className={styles.list}>
                             <Card>
                                 <CardContent>
-                                    <Typography><Image className={styles.image} src="" alt="TourServiT"></Image></Typography>
+                                    <div className={styles.cardhead}>
+                                        <Image className={styles.image} src="" alt=""></Image>
 
-                                    <Typography>
                                         <h4>투어서비스</h4>
-                                    </Typography>
+                                    </div>
 
-                                    <Typography>
-                                        여행 서비스는  Tour Service IT
-                                    </Typography>
-                                    <div className={styles.box} >
+                                    <div className={styles.cardbody}>
                                         <Typography>
-                                            안녕하세요.
+                                            여행 서비스는  Tour Service IT
                                         </Typography>
-                                        <Typography>
-                                            테스트를 위한 연합사입니다.
-                                        </Typography>
-                                        <Typography>
-                                            테스트용 연합 상품이 있습니다.
-                                        </Typography>
+                                        <div  className={styles.text} >
+                                            <Typography><LocationOnIcon></LocationOnIcon>
+                                                연제창업나래센터
+                                            </Typography>
+                                            <Typography><InfoIcon></InfoIcon>
+                                                여행 서비스 IT
+                                            </Typography>
+                                            <Typography><CallIcon></CallIcon>
+                                                012-3456-7890
+                                            </Typography>
+                                        </div>
+
+                                        <div className={styles.box} >
+                                            <Typography sx={{ fontWeight: 'bold' }}>
+                                                #오사카 #시모노세키 #부관훼리
+                                            </Typography>
+                                            <Typography>
+                                                테스트를 위한 연합사입니다.
+                                            </Typography>
+                                            <Typography>
+                                                테스트용 연합 상품이 있습니다.
+                                            </Typography>
+                                        </div>
                                     </div>
 
                                     <div className={styles.favor} onClick={handleFavorite}>
@@ -532,137 +549,8 @@ export default function Home() {
                                 </CardContent>
                             </Card>
 
-                            <Card>
-                                <CardContent>
-                                    <Typography><Image className={styles.image} src="" alt="TourServiT"></Image></Typography>
 
-                                    <Typography>
-                                        <h4>나의 여행</h4>
-                                    </Typography>
 
-                                    <Typography>
-                                        모든 순간이 여행 나의 여행
-                                    </Typography>
-                                    <div className={styles.box} >
-                                        <Typography>
-                                            안녕하세요.
-                                        </Typography>
-                                        <Typography>
-                                            테스트를 위한 연합사입니다.
-                                        </Typography>
-                                        <Typography>
-                                            테스트용 연합 상품이 있습니다.
-                                        </Typography>
-                                    </div>
-
-                                    <div className={styles.favor} onClick={handleFavorite}>
-                                        {Favorite ? (
-                                            <FavoriteIcon className={styles.FavoriteIcon} />
-                                        ) : (
-                                            <FavoriteBorderIcon className={styles.FavoriteBorderIcon} />
-                                        )}
-                                    </div>
-                                </CardContent>
-                            </Card>
-
-                            <Card>
-                                <CardContent>
-                                    <Typography><Image className={styles.image} src="" alt="TourServiT"></Image></Typography>
-
-                                    <Typography>
-                                        <h4>나의 여행</h4>
-                                    </Typography>
-
-                                    <Typography>
-                                        모든 순간이 여행 나의 여행
-                                    </Typography>
-                                    <div className={styles.box} >
-                                        <Typography>
-                                            안녕하세요.
-                                        </Typography>
-                                        <Typography>
-                                            테스트를 위한 연합사입니다.
-                                        </Typography>
-                                        <Typography>
-                                            테스트용 연합 상품이 있습니다.
-                                        </Typography>
-                                    </div>
-
-                                    <div className={styles.favor} onClick={handleFavorite}>
-                                        {Favorite ? (
-                                            <FavoriteIcon className={styles.FavoriteIcon} />
-                                        ) : (
-                                            <FavoriteBorderIcon className={styles.FavoriteBorderIcon} />
-                                        )}
-                                    </div>
-                                </CardContent>
-                            </Card>
-
-                            <Card>
-                                <CardContent>
-                                    <Typography><Image className={styles.image} src="" alt="TourServiT"></Image></Typography>
-
-                                    <Typography>
-                                        <h4>나의 여행</h4>
-                                    </Typography>
-
-                                    <Typography>
-                                        모든 순간이 여행 나의 여행
-                                    </Typography>
-                                    <div className={styles.box} >
-                                        <Typography>
-                                            안녕하세요.
-                                        </Typography>
-                                        <Typography>
-                                            테스트를 위한 연합사입니다.
-                                        </Typography>
-                                        <Typography>
-                                            테스트용 연합 상품이 있습니다.
-                                        </Typography>
-                                    </div>
-
-                                    <div className={styles.favor} onClick={handleFavorite}>
-                                        {Favorite ? (
-                                            <FavoriteIcon className={styles.FavoriteIcon} />
-                                        ) : (
-                                            <FavoriteBorderIcon className={styles.FavoriteBorderIcon} />
-                                        )}
-                                    </div>
-                                </CardContent>
-                            </Card>
-
-                            <Card>
-                                <CardContent>
-                                    <Typography><Image className={styles.image} src="" alt="TourServiT"></Image></Typography>
-
-                                    <Typography>
-                                        <h4>나의 여행</h4>
-                                    </Typography>
-
-                                    <Typography>
-                                        모든 순간이 여행 나의 여행
-                                    </Typography>
-                                    <div className={styles.box} >
-                                        <Typography>
-                                            안녕하세요.
-                                        </Typography>
-                                        <Typography>
-                                            테스트를 위한 연합사입니다.
-                                        </Typography>
-                                        <Typography>
-                                            테스트용 연합 상품이 있습니다.
-                                        </Typography>
-                                    </div>
-
-                                    <div className={styles.favor} onClick={handleFavorite}>
-                                        {Favorite ? (
-                                            <FavoriteIcon className={styles.FavoriteIcon} />
-                                        ) : (
-                                            <FavoriteBorderIcon className={styles.FavoriteBorderIcon} />
-                                        )}
-                                    </div>
-                                </CardContent>
-                            </Card>
                         </div>
 
                     </div>

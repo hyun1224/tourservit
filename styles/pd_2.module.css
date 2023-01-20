@@ -93,7 +93,7 @@
     border-radius: 50px;
     border: 1px solid #3571FF;
     color: #3571FF;
-    transition: all 0.5s ease-in 0s;
+    transition: color 1s, background 1s;
     box-shadow: none;
     font-weight: 600;
 }
@@ -159,7 +159,7 @@
 .menubar svg {
     opacity: 1;
     cursor: pointer;
-    transition: all 0.5s ease-in 0s;
+    transition: opacity 0.5s;
 }
 
 .menubar:hover svg:not(:hover) {
@@ -190,7 +190,7 @@
     color: #252733;
     height: 40px;
     margin: 5px 0;
-    transition: all 0.5s ease-in 0s;
+    transition: background 0.5s, opacity 0.5s;
 }
 
 .menu2:hover .menu3:not(:hover) {
@@ -201,7 +201,7 @@
     color: #252733;
     width: 22px;
     height: 22px;
-    transition: all 0.5s ease-in 0s;
+    transition: color 1s;
 }
 
 .menu2 .menu3 div {
@@ -245,7 +245,7 @@
 
 .menu5 span {
     font-size: 0.8rem;
-    transition: all 0.5s ease-in 0s;
+    transition: color 0.5s;
     font-weight: bold;
 }
 
@@ -275,274 +275,105 @@
 
 .body h3 {
     font-size: 2rem;
+    margin-bottom: 50px;
 }
 
-.body .title {
+.body .list {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 50px;
+    justify-content: space-evenly;
 
 }
 
-.body .title span form {
-    width: 245px;
-    height: 40px;
-}
-
-
-/* .addtitle */
-.addtitle {
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-around
-}
-
-.addtitle .phone {
-    box-sizing: border-box;
-    width: 350px;
-    height: 680px;
-    border: 5px solid #DADADA;
-    border-radius: 70px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-.addtitle .phone .header {
-    height: 280px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-    width: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-bottom: 1px solid #DADADA;
-}
-
-.addtitle .phone .header .image {
-    background-color: #DADADA;
-    display: block;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 50px 0 30px;
-}
-
-.addtitle .phone .header p {
-    text-align: center;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-
-}
-
-
-
-.addtitle .phone .header .btn {
-    border: 1px solid #7698CC;
-    background-color: #fff;
-    color: #7698CC;
-    box-shadow: none;
-    border-radius: 20px;
-    transition: all 0.5s ease-in 0s;
-}
-
-
-.addtitle .phone .header .btn:hover {
-    background-color: #7698CC;
-    color: #fff;
-}
-
-
-
-
-
-
-
-/* right */
-
-.right {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-/* list */
-
-.listform {
-    width: 1070px;
-}
-
-.listform .list {
-    box-sizing: border-box;
-    background: #FFFFFF;
-    border: 2px solid #DADADA;
-    border-radius: 20px;
-    padding: 10px;
-    box-shadow: none;
-
-}
-
-.listform .list::before {
-    height: 0;
-}
-
-.listform .list:first-child {
-    margin-bottom: 25px;
-}
-
-.listform .list {
-    min-height: 60px;
-}
-
-.listform .list div {
-    align-items: center;
-
-}
-
-.listform .list div:not(:hover) .number {
-    background-color: #252733;
-}
-
-.listform .list div:not(:hover) .contentform {
-    border: 2px solid #DADADA;
-}
-
-.listform .list div>svg {
-    color: #252733;
-}
-
-.contentform {
-    width: 800px;
-    height: 45px;
-    box-shadow: none;
-    border: 2px solid #3571FF;
-    border-radius: 10px;
-    transition: all 0.5s ease-in 0s;
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translateY(-50%);
-}
-
-.listform .list div:nth-child(4) .contentform {
-    width: 400px;
-}
-
-
-.contentform input {
-    font-size: 0.8rem;
-    margin: 4px 0 0 10px;
-    font-family: 'Inter', sans-serif;
-}
-
-
-.listform .list .number {
-    background-color: #3571FF;
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    color: #fff;
-    border-radius: 50%;
-    padding-top: 4px;
-    margin: 0 20px 0 5px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    transition: all 0.5s ease-in 0s;
-}
-
-.listform .list .text:first-child {
-    margin-right: 50px;
-}
-
-
-.listform .list .formbtn button {
-    background-color: #3571FF;
-    border-radius: 10px;
-    width: 135px;
-    height: 40px;
-    position: absolute;
-    right: 5%;
-    transform: translateY(-50%);
-    top: 50%;
-    box-shadow: none;
-}
-
-.listform .list .formbtn button svg {
-    color: #fff;
-    margin-right: 10px;
-}
-
-.listform .list .formbtn button span {
-    padding-top: 2px;
-}
-
-.bottom {
-    display: flex;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-
-.bottom .btn button {
-    background-color: #fff;
-    border-radius: 10px;
-    width: 130px;
-    height: 50px;
-    box-shadow: none;
-    color: #252733;
-    border: 1px solid #DADADA;
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding-top: 9px;
-    transition: all 0.5s ease-in 0s;
-}
-
-.bottom .btn button:hover {
-    background-color: #3571FF;
-    color: #fff;
-    border: none;
-}
-
-.bottom .btn:first-child {
-    margin-right: 50px;
-}
-
-
-.link {
-    display: flex;
-
-}
-
-.checkbox {
-    margin-left: 65px;
-}
-
-.checkbox div {
-    flex-direction: row;
-    justify-content: flex-start;
-
-}
-
-.checkbox div label {
+.body .list .card1 {
     width: 180px;
-    margin-bottom: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 10px 10px 10px 0px;
+    height: 140px;
+    background: #FFFFFF;
+    border: 1px solid #DADADA;
+}
+
+.body .list .card1>div {
+    padding: 0;
+}
+
+.body .list .card1 h4 {
+    box-sizing: border-box;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #DADADA;
+    padding: 20px 0 10px 12px;
+    font-weight: bold;
+}
+
+.body .list .card1 .cardbody {
+    margin-top: 20px;
+    padding: 0 12px 10px 12px;
+}
+
+.body .list .card1 .cardbody .text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.body .list .card1 .cardbody span {
+    font-weight: bold;
 }
 
 
 
-.checkbox label svg {
+.body .list .card2 {
+    width: 220px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 10px 10px 10px 0px;
+    height: 225px;
+    background: #FFFFFF;
+    border: 1px solid #DADADA;
+}
 
-    margin-right: 10px;
+.body .list .card2 .cardhead { 
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.body .list .card2 .image {
+    width: 25px;
+    height: 25px;
+    background-color: #DADADA;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.body .list .card2>div {
+    padding: 0;
+}
+
+.body .list .card2 h4 {
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.body .list .card2 .cardbody {
+    border-top: 1px solid #DADADA;
+    margin-top: 20px;
+    padding: 20px 12px 10px 12px;
+}
+
+.body .list .card2 .cardbody .text {
+    display: flex;
+    justify-content: space-between;
+    color: #575757;
+}
+
+.body .list .card2 .cardbody span {
+    font-weight: bold;
 }
 
 
 
-.pdlink {
-    position: relative;
-}
+
+
 
 
 
@@ -602,7 +433,7 @@
 
 .memolist ul dl {
     padding: 10px;
-    transition: all 0.5s ease-in 0s;
+    transition: background 1s;
     width: 100%;
 }
 

@@ -305,7 +305,7 @@ export default function Home() {
 
                     <div className={styles.logo}><Image onClick={link} src="/logo.png" alt="TourServiT" width={160} height={30}></Image></div>
 
-                    <div className={styles.search}><Paper
+                    {/* <div className={styles.search}><Paper
                         component="form"
                         sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
                     >
@@ -318,7 +318,7 @@ export default function Home() {
                         <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
                             <SearchIcon />
                         </IconButton>
-                    </Paper></div>
+                    </Paper></div> */}
 
                     <div className={styles.info} >
                         <Stack className={styles.avator} direction="row" spacing={2}>
@@ -330,7 +330,7 @@ export default function Home() {
                         <Button className={styles.logout} variant="contained" onClick={link}>로그아웃</Button>
                     </div>
 
-                    <div className={styles.button}>
+                    {/* <div className={styles.button}>
                         <Badge className={styles.notificationnone} badgeContent={1} color="primary">
                             <NotificationsNoneIcon color="action" />
                         </Badge>
@@ -338,19 +338,19 @@ export default function Home() {
                         <SettingsIcon className={styles.setting}></SettingsIcon>
 
                         <FormatAlignLeftIcon className={styles.list}></FormatAlignLeftIcon>
-                    </div>
+                    </div> */}
 
                 </div>
 
                 <div className={styles.body}>
                     <div className={styles.nav}>
-                        <div className={styles.menubar}>
+                        {/* <div className={styles.menubar}>
                             <InventoryIcon className={styles.menu}></InventoryIcon>
                             <ListAltIcon className={styles.menu}></ListAltIcon>
                             <CalculateIcon className={styles.menu}></CalculateIcon>
                             <SettingsIcon className={styles.menu}></SettingsIcon>
 
-                        </div>
+                        </div> */}
 
                         <div>
                             <List className={styles.menu2}

@@ -32,11 +32,41 @@ import Box from "@mui/material/Box";
 import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
 import AddIcon from '@mui/icons-material/Add';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 import { styled } from "@mui/material/styles";
+import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch, { SwitchProps } from "@mui/material/Switch";
+import LinkIcon from '@mui/icons-material/Link';
+import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
+import SendIcon from '@mui/icons-material/Send';
+import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import CallIcon from '@mui/icons-material/Call';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import InfoIcon from '@mui/icons-material/Info';
 
 
+
+
+const bull = (
+    <Box
+        component="span"
+        sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+    >
+        •
+    </Box>
+);
 
 const IOSSwitch = styled((props: SwitchProps) => (
     <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
@@ -104,12 +134,13 @@ function createData(
 
 
 export default function Home() {
-    const [expanded, setExpanded] = React.useState<string | false>('panel1');
 
-    const handleChange =
-        (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-            setExpanded(isExpanded ? panel : false);
-        };
+    const [Favorite, setFavorite] = React.useState(false);
+
+    const handleFavorite = () => {
+        setFavorite(!Favorite);
+    };
+
 
     const router = useRouter();
 
@@ -273,8 +304,6 @@ export default function Home() {
     const set_3 = () => {
         router.push("/set_3")
     }
-
-
     const [showPassword, setShowPassword] = React.useState(false);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -337,13 +366,13 @@ export default function Home() {
 
                 <div className={styles.body}>
                     <div className={styles.nav}>
-                        <div className={styles.menubar}>
+                        {/* <div className={styles.menubar}>
                             <InventoryIcon className={styles.menu}></InventoryIcon>
                             <ListAltIcon className={styles.menu}></ListAltIcon>
                             <CalculateIcon className={styles.menu}></CalculateIcon>
                             <SettingsIcon className={styles.menu}></SettingsIcon>
 
-                        </div>
+                        </div> */}
 
                         <div>
                             <List className={styles.menu2}
@@ -470,14 +499,49 @@ export default function Home() {
                     </div>
 
                     <div className={styles.content}>
-                        <div>
-                            <div className={styles.title}>
-                                <h3>예약 일정</h3>
-                            </div>
+                        <h3 className={styles.title}>예약 일정</h3>
+
+                        <div className={styles.list}>
+                            <Card className={styles.card1}>
+                                <CardContent>
+                                    <h4>인원체크</h4>
+
+                                    <div className={styles.cardbody}>
+                                        <div className={styles.text}><Typography>
+                                            15박 16일 :
+                                        </Typography> <span>1명</span></div>
+                                        <div className={styles.text}><Typography>
+                                            편도 :
+                                        </Typography><span>1명</span></div>
+                                    </div>
+                                </CardContent>
+                            </Card>
+
+                            <Card className={styles.card2}>
+                                <CardContent>
+                                    <div  className={styles.cardhead}><Image className={styles.image} src="" alt="" ></Image><h4>부관훼리 연합</h4></div>
+
+                                    <div className={styles.cardbody}>
+                                        <div className={styles.text}><Typography>
+                                            대표자 :
+                                        </Typography> <span>하동현</span></div>
+                                        <div className={styles.text}><Typography>
+                                            교통편 :
+                                        </Typography><span>팬스타</span></div>
+                                        <div className={styles.text}><Typography>
+                                            일정 :
+                                        </Typography><span>15박 16일</span></div>
+                                        <div className={styles.text}><Typography>
+                                            인원 :
+                                        </Typography><span>1명</span></div>
+                                        <div className={styles.text}><Typography>
+                                            예약처 :
+                                        </Typography><span>투어서비스</span></div>
+                                    </div>
+                                </CardContent>
+                            </Card>
+
                         </div>
-
-
-
 
                     </div>
                 </div>
@@ -485,25 +549,23 @@ export default function Home() {
 
 
             </main>
-            {
-                (["right"] as const).map((anchor) => (
-                    <React.Fragment key={anchor}>
-                        <Button className={styles.memobtn}
-                            onClick={toggleDrawer(anchor, true)}>
-                            <Fab className={styles.memo} color="secondary" aria-label="edit">
-                                <EditIcon />
-                            </Fab>
-                        </Button>
-                        <Drawer
-                            anchor={anchor}
-                            open={state[anchor]}
-                            onClose={toggleDrawer(anchor, false)}
-                        >
-                            {list(anchor)}
-                        </Drawer>
-                    </React.Fragment>
-                ))
-            }
+            {(["right"] as const).map((anchor) => (
+                <React.Fragment key={anchor}>
+                    <Button className={styles.memobtn}
+                        onClick={toggleDrawer(anchor, true)}>
+                        <Fab className={styles.memo} color="secondary" aria-label="edit">
+                            <EditIcon />
+                        </Fab>
+                    </Button>
+                    <Drawer
+                        anchor={anchor}
+                        open={state[anchor]}
+                        onClose={toggleDrawer(anchor, false)}
+                    >
+                        {list(anchor)}
+                    </Drawer>
+                </React.Fragment>
+            ))}
         </>
     )
 }
